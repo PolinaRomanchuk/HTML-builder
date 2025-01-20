@@ -12,7 +12,7 @@ async function findFiles(folder) {
       const fileStats = await stat(filePath);
       const fileExtension = path.extname(file.name).slice(1);
       const fileSize = fileStats.size;
-      console.log(`${filePath} - ${fileExtension} - ${fileSize} bytes`);
+      console.log(`${file.name} - ${fileExtension} - ${fileSize} bytes`);
     }
   }
 }
