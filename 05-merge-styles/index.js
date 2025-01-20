@@ -5,7 +5,7 @@ const { createReadStream, createWriteStream } = require('node:fs');
 const stylesFolderPath = join(__dirname, 'styles');
 const bundleFilePath = join(__dirname, 'project-dist', 'bundle.css');
 
-const writableStream = createWriteStream(bundleFilePath, { flags: 'a' });
+const writableStream = createWriteStream(bundleFilePath, { flags: 'w' });
 
 async function findFiles() {
   const files = await readdir(stylesFolderPath, { withFileTypes: true });
