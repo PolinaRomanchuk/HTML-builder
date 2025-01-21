@@ -11,8 +11,9 @@ async function findFiles(folder) {
       const filePath = path.join(folder, file.name);
       const fileStats = await stat(filePath);
       const fileExtension = path.extname(file.name).slice(1);
+      const fileName = path.basename(file.name, `.${fileExtension}`);
       const fileSize = fileStats.size;
-      console.log(`${file.name} - ${fileExtension} - ${fileSize} bytes`);
+      console.log(`${fileName} - ${fileExtension} - ${fileSize} bytes`);
     }
   }
 }
